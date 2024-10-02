@@ -20,7 +20,7 @@ RUN apk add --no-cache pipx
 
 ENV PATH="$PATH:/root/.local/bin"
 
-RUN pipx install pdfCropMargins
+# RUN pipx install pdfCropMargins
 
 # Copy files needed by npm install
 COPY package*.json ./
