@@ -365,7 +365,7 @@ router.post('/upload', async (ctx, next) => {
       } catch (err) {
         flash(ctx, {
           success: false,
-          message: err.replaceAll(basename(ctx.request.file.path), "infile.epub").replaceAll(basename(outname), "outfile.mobi")
+          message: err.message.replaceAll(basename(ctx.request.file.path), "infile.epub").replaceAll(basename(outname), "outfile.mobi")
         })
         return
       }
@@ -415,7 +415,7 @@ router.post('/upload', async (ctx, next) => {
       } catch (err) {
         flash(ctx, {
           success: false,
-          message: err.replaceAll(basename(ctx.request.file.path), "infile.epub").replaceAll(basename(outname), "outfile.kepub.epub")
+          message: err.message.replaceAll(basename(ctx.request.file.path), "infile.epub").replaceAll(basename(outname), "outfile.kepub.epub")
         })
         return
       }
@@ -463,7 +463,7 @@ router.post('/upload', async (ctx, next) => {
       } catch (err) {
         flash(ctx, {
           success: false,
-          message: err.replaceAll(basename(ctx.request.file.path), "infile.pdf").replaceAll(outfile, "outfile.pdf")
+          message: err.message.replaceAll(basename(ctx.request.file.path), "infile.pdf").replaceAll(outfile, "outfile.pdf")
         })
         return
       }
