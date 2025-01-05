@@ -4,8 +4,8 @@ FROM node:22-alpine
 WORKDIR /usr/src/app
 
 # Download and install kepubify
-RUN wget https://github.com/pgaskin/kepubify/releases/download/v4.0.4/kepubify-linux-64bit && \
-    mv kepubify-linux-64bit /usr/local/bin/kepubify && \
+RUN wget https://github.com/pgaskin/kepubify/releases/download/v4.0.4/kepubify-linux-arm64 && \
+    mv kepubify-linux-arm64 /usr/local/bin/kepubify && \
     chmod +x /usr/local/bin/kepubify
 
 # Download and install kindlegen
@@ -16,7 +16,7 @@ RUN wget https://web.archive.org/web/20150803131026if_/https://kindlegen.s3.amaz
     chmod +x /usr/local/bin/kindlegen && \
     rm -rf kindlegen
 
-RUN apk add --no-cache pipx
+RUN apk add --no-cache pipx qemu-user-static
 
 ENV PATH="$PATH:/root/.local/bin"
 

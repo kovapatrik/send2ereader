@@ -320,7 +320,7 @@ router.post('/upload', async (ctx, next) => {
       let stderr = ''
 
       let p = new Promise((resolve, reject) => {
-        const kindlegen = spawn('kindlegen', [basename(ctx.request.file.path), '-dont_append_source', '-c1', '-o', basename(outname)], {
+        const kindlegen = spawn('qemu-i386-static', 'kindlegen', [basename(ctx.request.file.path), '-dont_append_source', '-c1', '-o', basename(outname)], {
           // stdio: 'inherit',
           cwd: dirname(ctx.request.file.path)
         })
